@@ -27,6 +27,10 @@ body {
 p {
     font-size: 9px;
 }
+/* Deixa apenas os links do menu menores */
+nav ul li a {
+    font-size: 10px;
+}
 /* fontes do google fonts */
 .slabo-13px-regular {
   font-family: "Slabo 13px", serif;
