@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Configurações — Use Brito Admin</title>
+<link rel="stylesheet" href="/mensagens/templates/static/css/admin.css">
+<style>
+  .settings-tabs{display:flex;flex-direction:column;gap:2px;}
+  .settings-tabs a{padding:9px 12px;font-size:13.5px;border-radius:var(--radius-s);color:var(--slate);}
+  .settings-tabs a.active{background:var(--sand);color:var(--ink);font-weight:500;}
+  .settings-tabs a:hover{background:var(--sand);}
+  .member-row{display:flex;align-items:center;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--sand-line);}
+  .member-row:last-child{border-bottom:none;}
+</style>
+</head>
+<body>
+<div class="shell">
+
+  <aside class="sidebar">
+    <div class="brand">Use Brito</div>
+    <div class="brand-sub">Painel administrativo</div>
+    <nav class="nav-group">
+      <a class="nav-link" href="dashboard.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg>Visão geral</a>
+      <a class="nav-link" href="orders.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 7h16l-1.5 12.5a2 2 0 0 1-2 1.5H7.5a2 2 0 0 1-2-1.5L4 7Z"/><path d="M9 7V5a3 3 0 0 1 6 0v2"/></svg>Pedidos</a>
+      <a class="nav-link" href="products.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 8 12 3 3 8l9 5 9-5Z"/><path d="M3 8v8l9 5 9-5V8"/><path d="M12 13v8"/></svg>Produtos</a>
+      <a class="nav-link" href="inventory.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="7" width="18" height="14" rx="1"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M3 11h18"/></svg>Estoque</a>
+      <a class="nav-link" href="clients.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="3.2"/><path d="M5 20c1.2-3.6 4-5.4 7-5.4s5.8 1.8 7 5.4"/></svg>Clientes</a>
+      <a class="nav-link active" href="settings.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="3"/><path d="M19.4 13.5a7.6 7.6 0 0 0 0-3l2-1.5-2-3.4-2.3.9a7.6 7.6 0 0 0-2.6-1.5L14 2.5h-4l-.5 2.5a7.6 7.6 0 0 0-2.6 1.5l-2.3-.9-2 3.4 2 1.5a7.6 7.6 0 0 0 0 3l-2 1.5 2 3.4 2.3-.9c.76.66 1.65 1.17 2.6 1.5l.5 2.5h4l.5-2.5c.95-.33 1.84-.84 2.6-1.5l2.3.9 2-3.4-2-1.5Z"/></svg>Configurações</a>
+    </nav>
+    <div class="sidebar-foot">
+      <div class="user-chip"><div class="avatar">AB</div><div class="who"><div class="name">Ana Brito</div><div class="role">Administradora</div></div></div>
+      <a class="signout" href="login.html">Sair</a>
+    </div>
+  </aside>
+
+  <div class="main">
+    <div class="topbar">
+      <div>
+        <h1>Configurações</h1>
+        <div class="subtitle">Dados da loja, frete, pagamento e equipe</div>
+      </div>
+      <div class="topbar-actions">
+        <button class="btn btn-primary">Salvar alterações</button>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="grid-2" style="grid-template-columns:200px 1fr;">
+        <nav class="settings-tabs">
+          <a class="active" href="#loja">Dados da loja</a>
+          <a href="#frete">Frete</a>
+          <a href="#pagamento">Pagamento</a>
+          <a href="#equipe">Equipe</a>
+          <a href="#notificacoes">Notificações</a>
+        </nav>
+
+        <div>
+          <div class="panel" id="loja">
+            <div class="panel-head"><h2>Dados da loja</h2></div>
+            <div class="panel-body">
+              <div class="field">
+                <label for="sname">Nome da loja</label>
+                <input type="text" id="sname" value="Use Brito">
+              </div>
+              <div class="field-row">
+                <div class="field">
+                  <label for="scnpj">CNPJ</label>
+                  <input type="text" id="scnpj" value="00.000.000/0001-00">
+                </div>
+                <div class="field">
+                  <label for="semail">E-mail de contato</label>
+                  <input type="email" id="semail" value="contato@usebrito.com.br">
+                </div>
+              </div>
+              <div class="field">
+                <label for="saddr">Endereço</label>
+                <input type="text" id="saddr" value="Rua Augusta, 1200 - São Paulo, SP">
+              </div>
+            </div>
+          </div>
+
+          <div class="panel" id="frete">
+            <div class="panel-head"><h2>Frete</h2></div>
+            <div class="panel-body">
+              <div class="toggle-row">
+                <div><div class="t-label">Frete grátis acima de um valor</div><div class="t-desc">Aplica automaticamente no checkout</div></div>
+                <label class="switch"><input type="checkbox" checked><span class="track"></span></label>
+              </div>
+              <div class="field" style="margin-top:16px;">
+                <label for="sfree">Valor mínimo para frete grátis</label>
+                <input type="text" id="sfree" value="R$ 350,00">
+              </div>
+              <div class="field">
+                <label for="sorigin">CEP de origem</label>
+                <input type="text" id="sorigin" value="01305-000">
+              </div>
+            </div>
+          </div>
+
+          <div class="panel" id="pagamento">
+            <div class="panel-head"><h2>Pagamento</h2></div>
+            <div class="panel-body">
+              <div class="toggle-row">
+                <div><div class="t-label">Cartão de crédito</div><div class="t-desc">Até 6x sem juros</div></div>
+                <label class="switch"><input type="checkbox" checked><span class="track"></span></label>
+              </div>
+              <div class="toggle-row">
+                <div><div class="t-label">Pix</div><div class="t-desc">5% de desconto à vista</div></div>
+                <label class="switch"><input type="checkbox" checked><span class="track"></span></label>
+              </div>
+              <div class="toggle-row">
+                <div><div class="t-label">Boleto bancário</div><div class="t-desc">Compensação em até 3 dias úteis</div></div>
+                <label class="switch"><input type="checkbox"><span class="track"></span></label>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel" id="equipe">
+            <div class="panel-head">
+              <h2>Equipe</h2>
+              <button class="btn btn-ghost btn-sm">+ Convidar</button>
+            </div>
+            <div class="panel-body">
+              <div class="member-row">
+                <div class="row-flex"><div class="avatar">AB</div><div><div style="font-weight:500;font-size:13.5px;">Ana Brito</div><div class="cell-muted" style="font-size:12px;">ana@usebrito.com.br</div></div></div>
+                <span class="badge badge-active">Administradora</span>
+              </div>
+              <div class="member-row">
+                <div class="row-flex"><div class="avatar" style="background:var(--ink);">JP</div><div><div style="font-weight:500;font-size:13.5px;">Júlia Prado</div><div class="cell-muted" style="font-size:12px;">julia@usebrito.com.br</div></div></div>
+                <span class="badge badge-ok">Atendimento</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel" id="notificacoes">
+            <div class="panel-head"><h2>Notificações</h2></div>
+            <div class="panel-body">
+              <div class="toggle-row">
+                <div><div class="t-label">Novo pedido</div><div class="t-desc">Receber e-mail a cada novo pedido</div></div>
+                <label class="switch"><input type="checkbox" checked><span class="track"></span></label>
+              </div>
+              <div class="toggle-row">
+                <div><div class="t-label">Estoque baixo</div><div class="t-desc">Alerta quando um item chegar ao mínimo</div></div>
+                <label class="switch"><input type="checkbox" checked><span class="track"></span></label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="js/admin.js"></script>
+</body>
+</html>

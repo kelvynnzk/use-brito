@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Visão geral — Use Brito Admin</title>
+<link rel="stylesheet" href="/mensagens/templates/static/css/admin.css">
+<style>
+  .chart{display:flex;align-items:flex-end;gap:14px;height:160px;padding:10px 4px 0;}
+  .chart .bar-col{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;}
+  .chart .bar{width:100%;max-width:34px;background:var(--sand);border-radius:3px 3px 0 0;}
+  .chart .bar-col.today .bar{background:var(--clay);}
+  .chart .bar-label{font-size:11px;color:var(--slate);margin-top:8px;}
+  .low-stock-item{display:flex;justify-content:space-between;align-items:center;padding:11px 0;border-bottom:1px solid var(--sand-line);}
+  .low-stock-item:last-child{border-bottom:none;}
+  .low-stock-item .name{font-size:13px;}
+  .low-stock-item .variant{font-size:11.5px;color:var(--slate-light);}
+</style>
+</head>
+<body>
+<div class="shell">
+
+  <aside class="sidebar">
+    <div class="brand">Use Brito</div>
+    <div class="brand-sub">Painel administrativo</div>
+
+    <nav class="nav-group">
+      <a class="nav-link" href="dashboard.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg>Visão geral</a>
+      <a class="nav-link" href="orders.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 7h16l-1.5 12.5a2 2 0 0 1-2 1.5H7.5a2 2 0 0 1-2-1.5L4 7Z"/><path d="M9 7V5a3 3 0 0 1 6 0v2"/></svg>Pedidos</a>
+      <a class="nav-link" href="products.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 8 12 3 3 8l9 5 9-5Z"/><path d="M3 8v8l9 5 9-5V8"/><path d="M12 13v8"/></svg>Produtos</a>
+      <a class="nav-link" href="inventory.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="7" width="18" height="14" rx="1"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M3 11h18"/></svg>Estoque</a>
+      <a class="nav-link" href="clients.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="3.2"/><path d="M5 20c1.2-3.6 4-5.4 7-5.4s5.8 1.8 7 5.4"/></svg>Clientes</a>
+      <a class="nav-link" href="settings.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="3"/><path d="M19.4 13.5a7.6 7.6 0 0 0 0-3l2-1.5-2-3.4-2.3.9a7.6 7.6 0 0 0-2.6-1.5L14 2.5h-4l-.5 2.5a7.6 7.6 0 0 0-2.6 1.5l-2.3-.9-2 3.4 2 1.5a7.6 7.6 0 0 0 0 3l-2 1.5 2 3.4 2.3-.9c.76.66 1.65 1.17 2.6 1.5l.5 2.5h4l.5-2.5c.95-.33 1.84-.84 2.6-1.5l2.3.9 2-3.4-2-1.5Z"/></svg>Configurações</a>
+    </nav>
+
+    <div class="sidebar-foot">
+      <div class="user-chip">
+        <div class="avatar">AB</div>
+        <div class="who">
+          <div class="name">Ana Brito</div>
+          <div class="role">Administradora</div>
+        </div>
+      </div>
+      <a class="signout" href="login.html">Sair</a>
+    </div>
+  </aside>
+
+  <div class="main">
+    <div class="topbar">
+      <div>
+        <h1>Visão geral</h1>
+        <div class="subtitle">Terça-feira, 3 de novembro</div>
+      </div>
+      <div class="topbar-actions">
+        <a href="orders.html" class="btn btn-ghost">Ver pedidos</a>
+        <a href="products-form.html" class="btn btn-primary">+ Novo produto</a>
+      </div>
+    </div>
+
+    <div class="content">
+
+      <div class="stat-row">
+        <div class="stat-card">
+          <div class="label">Vendas hoje</div>
+          <div class="value">R$ 3.240</div>
+          <div class="delta up">↑ 12% vs. ontem</div>
+        </div>
+        <div class="stat-card">
+          <div class="label">Pedidos pendentes</div>
+          <div class="value">7</div>
+          <div class="delta">3 aguardando pagamento</div>
+        </div>
+        <div class="stat-card">
+          <div class="label">Ticket médio</div>
+          <div class="value">R$ 218</div>
+          <div class="delta up">↑ 4% este mês</div>
+        </div>
+        <div class="stat-card">
+          <div class="label">Produtos em falta</div>
+          <div class="value">4</div>
+          <div class="delta down">2 novos esta semana</div>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="panel">
+          <div class="panel-head">
+            <h2>Vendas na semana</h2>
+            <span class="text-muted" style="font-size:12.5px;">Últimos 7 dias</span>
+          </div>
+          <div class="panel-body">
+            <div class="chart">
+              <div class="bar-col"><div class="bar" style="height:38%;"></div><div class="bar-label">Qua</div></div>
+              <div class="bar-col"><div class="bar" style="height:55%;"></div><div class="bar-label">Qui</div></div>
+              <div class="bar-col"><div class="bar" style="height:44%;"></div><div class="bar-label">Sex</div></div>
+              <div class="bar-col"><div class="bar" style="height:70%;"></div><div class="bar-label">Sáb</div></div>
+              <div class="bar-col"><div class="bar" style="height:60%;"></div><div class="bar-label">Dom</div></div>
+              <div class="bar-col"><div class="bar" style="height:48%;"></div><div class="bar-label">Seg</div></div>
+              <div class="bar-col today"><div class="bar" style="height:82%;"></div><div class="bar-label">Ter</div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-head">
+            <h2>Estoque baixo</h2>
+            <a href="inventory.html" class="text-muted" style="font-size:12.5px;">Ver tudo</a>
+          </div>
+          <div class="panel-body">
+            <div class="low-stock-item">
+              <div><div class="name">Camisa Alfaiataria Areia</div><div class="variant">Tam. M</div></div>
+              <span class="badge badge-low">3 un.</span>
+            </div>
+            <div class="low-stock-item">
+              <div><div class="name">Calça Reta Tijolo</div><div class="variant">Tam. 40</div></div>
+              <span class="badge badge-out">Esgotado</span>
+            </div>
+            <div class="low-stock-item">
+              <div><div class="name">Blazer Musgo</div><div class="variant">Tam. G</div></div>
+              <span class="badge badge-low">2 un.</span>
+            </div>
+            <div class="low-stock-item">
+              <div><div class="name">Vestido Linho Cru</div><div class="variant">Tam. P</div></div>
+              <span class="badge badge-low">4 un.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head">
+          <h2>Pedidos recentes</h2>
+          <a href="orders.html" class="text-muted" style="font-size:12.5px;">Ver todos</a>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Pedido</th><th>Cliente</th><th>Data</th><th class="num">Total</th><th>Status</th></tr>
+            </thead>
+            <tbody>
+              <tr class="clickable" onclick="goToOrder('1042')">
+                <td class="cell-primary">#1042</td><td>Marina Souza</td><td class="cell-muted">03/11, 14:20</td>
+                <td class="num">R$ 458,00</td><td><span class="badge badge-pending">Pendente</span></td>
+              </tr>
+              <tr class="clickable" onclick="goToOrder('1041')">
+                <td class="cell-primary">#1041</td><td>Rafael Nogueira</td><td class="cell-muted">03/11, 11:05</td>
+                <td class="num">R$ 219,90</td><td><span class="badge badge-production">Em produção</span></td>
+              </tr>
+              <tr class="clickable" onclick="goToOrder('1040')">
+                <td class="cell-primary">#1040</td><td>Camila Duarte</td><td class="cell-muted">02/11, 19:40</td>
+                <td class="num">R$ 890,00</td><td><span class="badge badge-shipped">Enviado</span></td>
+              </tr>
+              <tr class="clickable" onclick="goToOrder('1039')">
+                <td class="cell-primary">#1039</td><td>Diego Farias</td><td class="cell-muted">02/11, 09:15</td>
+                <td class="num">R$ 134,00</td><td><span class="badge badge-delivered">Entregue</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script src="js/admin.js"></script>
+</body>
+</html>

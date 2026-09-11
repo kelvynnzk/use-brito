@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Estoque — Use Brito Admin</title>
+<link rel="stylesheet" href="/mensagens/templates/static/css/admin.css">
+</head>
+<body>
+<div class="shell">
+
+  <aside class="sidebar">
+    <div class="brand">Use Brito</div>
+    <div class="brand-sub">Painel administrativo</div>
+    <nav class="nav-group">
+      <a class="nav-link" href="dashboard.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg>Visão geral</a>
+      <a class="nav-link" href="orders.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 7h16l-1.5 12.5a2 2 0 0 1-2 1.5H7.5a2 2 0 0 1-2-1.5L4 7Z"/><path d="M9 7V5a3 3 0 0 1 6 0v2"/></svg>Pedidos</a>
+      <a class="nav-link" href="products.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 8 12 3 3 8l9 5 9-5Z"/><path d="M3 8v8l9 5 9-5V8"/><path d="M12 13v8"/></svg>Produtos</a>
+      <a class="nav-link" href="inventory.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="7" width="18" height="14" rx="1"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M3 11h18"/></svg>Estoque</a>
+      <a class="nav-link" href="clients.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="3.2"/><path d="M5 20c1.2-3.6 4-5.4 7-5.4s5.8 1.8 7 5.4"/></svg>Clientes</a>
+      <a class="nav-link" href="settings.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="3"/><path d="M19.4 13.5a7.6 7.6 0 0 0 0-3l2-1.5-2-3.4-2.3.9a7.6 7.6 0 0 0-2.6-1.5L14 2.5h-4l-.5 2.5a7.6 7.6 0 0 0-2.6 1.5l-2.3-.9-2 3.4 2 1.5a7.6 7.6 0 0 0 0 3l-2 1.5 2 3.4 2.3-.9c.76.66 1.65 1.17 2.6 1.5l.5 2.5h4l.5-2.5c.95-.33 1.84-.84 2.6-1.5l2.3.9 2-3.4-2-1.5Z"/></svg>Configurações</a>
+    </nav>
+    <div class="sidebar-foot">
+      <div class="user-chip"><div class="avatar">AB</div><div class="who"><div class="name">Ana Brito</div><div class="role">Administradora</div></div></div>
+      <a class="signout" href="login.html">Sair</a>
+    </div>
+  </aside>
+
+  <div class="main">
+    <div class="topbar">
+      <div>
+        <h1>Estoque</h1>
+        <div class="subtitle">146 variações cadastradas</div>
+      </div>
+      <div class="topbar-actions">
+        <button class="btn btn-ghost">Registrar entrada</button>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="stat-row" style="grid-template-columns:repeat(3,1fr);">
+        <div class="stat-card"><div class="label">Total em estoque</div><div class="value">1.284 un.</div></div>
+        <div class="stat-card"><div class="label">Estoque baixo</div><div class="value">9 variações</div></div>
+        <div class="stat-card"><div class="label">Esgotados</div><div class="value">4 variações</div></div>
+      </div>
+
+      <div class="panel">
+        <div class="tabs" data-target="#stockTable">
+          <div class="tab active" data-filter="all">Todos</div>
+          <div class="tab" data-filter="ok">Normal</div>
+          <div class="tab" data-filter="low">Estoque baixo</div>
+          <div class="tab" data-filter="out">Esgotado</div>
+        </div>
+        <div class="filter-row">
+          <div class="search-box">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+            <input type="search" placeholder="Buscar produto ou SKU" data-search-target="#stockTable">
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table id="stockTable">
+            <thead>
+              <tr><th>Produto</th><th>Variação</th><th>SKU</th><th class="num">Qtd.</th><th class="num">Mínimo</th><th>Status</th></tr>
+            </thead>
+            <tbody>
+              <tr data-status="ok">
+                <td class="cell-primary">Camisa Alfaiataria Areia</td><td class="cell-muted">P / Areia</td>
+                <td class="cell-muted">UB-CAM-AREIA-P</td><td class="num">12</td><td class="num">5</td>
+                <td><span class="badge badge-ok">Normal</span></td>
+              </tr>
+              <tr data-status="low">
+                <td class="cell-primary">Camisa Alfaiataria Areia</td><td class="cell-muted">M / Areia</td>
+                <td class="cell-muted">UB-CAM-AREIA-M</td><td class="num">3</td><td class="num">5</td>
+                <td><span class="badge badge-low">Baixo</span></td>
+              </tr>
+              <tr data-status="out">
+                <td class="cell-primary">Calça Reta Tijolo</td><td class="cell-muted">40 / Tijolo</td>
+                <td class="cell-muted">UB-CAL-TIJOLO-40</td><td class="num">0</td><td class="num">5</td>
+                <td><span class="badge badge-out">Esgotado</span></td>
+              </tr>
+              <tr data-status="low">
+                <td class="cell-primary">Blazer Musgo</td><td class="cell-muted">G / Musgo</td>
+                <td class="cell-muted">UB-BLZ-MUSGO-G</td><td class="num">2</td><td class="num">5</td>
+                <td><span class="badge badge-low">Baixo</span></td>
+              </tr>
+              <tr data-status="ok">
+                <td class="cell-primary">Vestido Linho Cru</td><td class="cell-muted">P / Cru</td>
+                <td class="cell-muted">UB-VES-CRU-P</td><td class="num">18</td><td class="num">5</td>
+                <td><span class="badge badge-ok">Normal</span></td>
+              </tr>
+              <tr data-status="ok">
+                <td class="cell-primary">Saia Midi Grafite</td><td class="cell-muted">M / Grafite</td>
+                <td class="cell-muted">UB-SAI-GRAFITE-M</td><td class="num">24</td><td class="num">5</td>
+                <td><span class="badge badge-ok">Normal</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="js/admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pedidos — Use Brito Admin</title>
+<link rel="stylesheet" href="/mensagens/templates/static/css/admin.css">
+</head>
+<body>
+<div class="shell">
+
+  <aside class="sidebar">
+    <div class="brand">Use Brito</div>
+    <div class="brand-sub">Painel administrativo</div>
+
+    <nav class="nav-group">
+      <a class="nav-link" href="dashboard.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg>Visão geral</a>
+      <a class="nav-link" href="orders.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 7h16l-1.5 12.5a2 2 0 0 1-2 1.5H7.5a2 2 0 0 1-2-1.5L4 7Z"/><path d="M9 7V5a3 3 0 0 1 6 0v2"/></svg>Pedidos</a>
+      <a class="nav-link" href="products.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 8 12 3 3 8l9 5 9-5Z"/><path d="M3 8v8l9 5 9-5V8"/><path d="M12 13v8"/></svg>Produtos</a>
+      <a class="nav-link" href="inventory.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="7" width="18" height="14" rx="1"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M3 11h18"/></svg>Estoque</a>
+      <a class="nav-link" href="clients.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="3.2"/><path d="M5 20c1.2-3.6 4-5.4 7-5.4s5.8 1.8 7 5.4"/></svg>Clientes</a>
+      <a class="nav-link" href="settings.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="3"/><path d="M19.4 13.5a7.6 7.6 0 0 0 0-3l2-1.5-2-3.4-2.3.9a7.6 7.6 0 0 0-2.6-1.5L14 2.5h-4l-.5 2.5a7.6 7.6 0 0 0-2.6 1.5l-2.3-.9-2 3.4 2 1.5a7.6 7.6 0 0 0 0 3l-2 1.5 2 3.4 2.3-.9c.76.66 1.65 1.17 2.6 1.5l.5 2.5h4l.5-2.5c.95-.33 1.84-.84 2.6-1.5l2.3.9 2-3.4-2-1.5Z"/></svg>Configurações</a>
+    </nav>
+
+    <div class="sidebar-foot">
+      <div class="user-chip">
+        <div class="avatar">AB</div>
+        <div class="who"><div class="name">Ana Brito</div><div class="role">Administradora</div></div>
+      </div>
+      <a class="signout" href="login.html">Sair</a>
+    </div>
+  </aside>
+
+  <div class="main">
+    <div class="topbar">
+      <div>
+        <h1>Pedidos</h1>
+        <div class="subtitle">42 pedidos este mês</div>
+      </div>
+      <div class="topbar-actions">
+        <button class="btn btn-ghost">Exportar CSV</button>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="panel">
+        <div class="tabs" data-target="#ordersTable">
+          <div class="tab active" data-filter="all">Todos</div>
+          <div class="tab" data-filter="pending">Pendente</div>
+          <div class="tab" data-filter="production">Em produção</div>
+          <div class="tab" data-filter="shipped">Enviado</div>
+          <div class="tab" data-filter="delivered">Entregue</div>
+          <div class="tab" data-filter="cancelled">Cancelado</div>
+        </div>
+        <div class="filter-row">
+          <div class="search-box">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+            <input type="search" placeholder="Buscar por cliente ou nº do pedido" data-search-target="#ordersTable">
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table id="ordersTable">
+            <thead>
+              <tr><th>Pedido</th><th>Cliente</th><th>Data</th><th>Itens</th><th class="num">Total</th><th>Status</th><th></th></tr>
+            </thead>
+            <tbody>
+              <tr class="clickable" data-status="pending" onclick="goToOrder('1042')">
+                <td class="cell-primary">#1042</td><td>Marina Souza</td><td class="cell-muted">03/11, 14:20</td>
+                <td class="cell-muted">2 peças</td><td class="num">R$ 458,00</td>
+                <td><span class="badge badge-pending">Pendente</span></td><td class="cell-muted">→</td>
+              </tr>
+              <tr class="clickable" data-status="production" onclick="goToOrder('1041')">
+                <td class="cell-primary">#1041</td><td>Rafael Nogueira</td><td class="cell-muted">03/11, 11:05</td>
+                <td class="cell-muted">1 peça</td><td class="num">R$ 219,90</td>
+                <td><span class="badge badge-production">Em produção</span></td><td class="cell-muted">→</td>
+              </tr>
+              <tr class="clickable" data-status="shipped" onclick="goToOrder('1040')">
+                <td class="cell-primary">#1040</td><td>Camila Duarte</td><td class="cell-muted">02/11, 19:40</td>
+                <td class="cell-muted">4 peças</td><td class="num">R$ 890,00</td>
+                <td><span class="badge badge-shipped">Enviado</span></td><td class="cell-muted">→</td>
+              </tr>
+              <tr class="clickable" data-status="delivered" onclick="goToOrder('1039')">
+                <td class="cell-primary">#1039</td><td>Diego Farias</td><td class="cell-muted">02/11, 09:15</td>
+                <td class="cell-muted">1 peça</td><td class="num">R$ 134,00</td>
+                <td><span class="badge badge-delivered">Entregue</span></td><td class="cell-muted">→</td>
+              </tr>
+              <tr class="clickable" data-status="delivered" onclick="goToOrder('1038')">
+                <td class="cell-primary">#1038</td><td>Beatriz Lima</td><td class="cell-muted">01/11, 17:50</td>
+                <td class="cell-muted">3 peças</td><td class="num">R$ 612,00</td>
+                <td><span class="badge badge-delivered">Entregue</span></td><td class="cell-muted">→</td>
+              </tr>
+              <tr class="clickable" data-status="cancelled" onclick="goToOrder('1037')">
+                <td class="cell-primary">#1037</td><td>João Pereira</td><td class="cell-muted">01/11, 10:12</td>
+                <td class="cell-muted">1 peça</td><td class="num">R$ 189,00</td>
+                <td><span class="badge badge-cancelled">Cancelado</span></td><td class="cell-muted">→</td>
+              </tr>
+              <tr class="clickable" data-status="pending" onclick="goToOrder('1036')">
+                <td class="cell-primary">#1036</td><td>Larissa Alencar</td><td class="cell-muted">31/10, 20:30</td>
+                <td class="cell-muted">2 peças</td><td class="num">R$ 342,00</td>
+                <td><span class="badge badge-pending">Pendente</span></td><td class="cell-muted">→</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="pagination">
+          <span>Mostrando 7 de 42 pedidos</span>
+          <div class="pages">
+            <button class="active">1</button><button>2</button><button>3</button><button>...</button><button>6</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="js/admin.js"></script>
+</body>
+</html>
