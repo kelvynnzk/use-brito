@@ -24,9 +24,6 @@ body {
     color: var(--text-color);
     line-height: 1.6;
 }
-p {
-    font-size: 9px;
-}
 /* Deixa apenas os links do menu menores */
 nav ul li a {
     font-size: 10px;
@@ -55,7 +52,7 @@ header {
 .logo h1 {
     font-size: 1.8rem;
     letter-spacing: 2px;
-    color: var(--primary-color);
+    color: #D98272;
 }
 
 nav ul {
