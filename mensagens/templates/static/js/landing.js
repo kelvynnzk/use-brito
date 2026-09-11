@@ -33,3 +33,26 @@ cartButtons.forEach(button => {
         }, 300);
     });
 });
+
+
+
+
+
+
+// Envia a mensagem automaticamente //
+const mensagem = `
+Olá Gostaria de finalizar o meu pedido na Use.Brito.
+
+produto: ${produto.nome}
+Tamanho: ${produto.tamanho}
+Quantidade: ${produto.quantidade}
+Total: ${produto.total}
+
+Nome ${clearInterval.nome}
+Endereço: ${cliente.endereco}
+`;
+
+window.open(
+    `https://wa.me/+5521992751307=${encodeURIComponent(mensagem)}`,
+    "_blank"
+);

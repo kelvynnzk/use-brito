@@ -24,6 +24,9 @@ body {
     color: var(--text-color);
     line-height: 1.6;
 }
+p {
+    font-size: 9px;
+}
 /* fontes do google fonts */
 .slabo-13px-regular {
   font-family: "Slabo 13px", serif;
