@@ -1,8 +1,16 @@
 from flask import Flask
+import routes.auth
 
 app = Flask(__name__)
+app.secret_key = "use-brito"
 
-@app.route("/mensagens/")
+@app.route("/login", methods=["POST"])
+def login():
+    return routes.auth.login()
+
+
+
+@app.route("/")
 def home():
     return "Funcionando!"
 
